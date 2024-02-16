@@ -8,10 +8,12 @@ import csv
 import base64, email.utils, hmac, hashlib, urllib
 import duo_client
 from six.moves import input
+from keys import *
+
 
 admin_api = duo_client.Admin(
-    ikey='*****',
-    skey='*******',
+    ikey=integration,
+    skey=secret,
     host='api-302859b9.duosecurity.com',
     ca_certs='DISABLE'
 )
