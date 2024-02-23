@@ -129,9 +129,7 @@ Interesting behavior to note regarding how duo handles username aliases. If a us
 
 Example: TestUser1 has username alias 1 as adm_testuser1 and has alias 2 as john_doe then DUO will respect that we selected "alias 7" and assigned the email to alias 7 and skip all other aliases. That being said if TestUser2 has no username aliases then it will ignore "alias 7" and assign the email to "alias 1" 
 
-My reason for selecting alias 7 as the deciding factor is because when you export the user list from DUO there are a few users who have up to 6 aliases for some reason. So in an attempt to not break anything I went with alias 7. That way for those who already have aliases it will assign the email as 7 and for those who don't have any it will give them "alias 1"
-
-Also there's not rate limit for this api end point so we can let it run unattended 
+Also there's not rate limit for this api endpoint so we can let it run unattended 
 '''
 def userUpdate():
     for index, row in nanDrop.iterrows():
